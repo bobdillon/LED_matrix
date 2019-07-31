@@ -1,0 +1,34 @@
+FINE Jumpers from DATA IN to DATA OUT
+
+IN  OUT
+R2  R1
+G1  R2
+G2  G1
+B1  G2
+B2  B1
+NINE Jumpers from the ESP32 to DATA IN
+
+ESP  IN
+13   R1
+22   LAT
+19   A
+23   B
+18   C
+5    D
+2    OE
+14   CLK
+GND  GND
+Power Harness
+
+The provided power harness needs to be connected to a 5VDC supply. If you plan to illuminate all the LEDs to full brightness, the panel will draw up to approximately 4A. If you have a decent "bench supply" that should be apply to provide 4A. For typical average operation, 2A might suffice. For example, we tested out a 2.5A USB power bank (battery pack), which worked fine. We soldered a USB connector in place of the screw lugs on the power harness allowing it to be plugged into the USB power bank.
+
+There are two four-pin headers on the power harness. These are for powering two panels. One of the headers can be removed if you wish to tidy things up, just be sure to wrap up the cut wire ends (with tape or tubing) to prevent shorting the power supply.
+
+Common Power Supply to LED Panel and ESP32
+
+Cut one end off of a DuPont jumper. Strip and tin the wire to connect it to a red line of the harness. 
+An easy option is to use one of the lines where we removed the extra four-pin power header. 
+Again, be sure to wrap the power splices to prevent shorting things out. 
+After the ESP32 is programmed and the USB cable is removed, 
+the female DuPont plug on the other end of the spliced wire can be placed on the VIN pin (not the 3V3 pin) of the ESP32 board. 
+This will supply power to the ESP32 board and and the LED matrix from the same 5V supply making a tight and portable configuration for running under battery power.
